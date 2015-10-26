@@ -66,6 +66,13 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
+  # Returns true if the given token matches the digest.
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
   private
 
   # Converts email to all lower-case.
@@ -79,12 +86,7 @@ class User < ActiveRecord::Base
     self.activation_digest = User.digest(activation_token)
   end
 
-  # Returns true if the given token matches the digest.
-  def authenticated?(attribute, token)
-    digest = send("#{attribute}_digest")
-    return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
-  end
+
 
 
 
