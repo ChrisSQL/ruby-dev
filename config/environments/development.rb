@@ -38,4 +38,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'radiant-sea-5676.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+
 end
