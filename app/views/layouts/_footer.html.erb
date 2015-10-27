@@ -1,13 +1,82 @@
-<footer class="footer">
-      <small>
-        The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-        by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
-      </small>
-      <nav>
-        <ul>
-          <li><%= link_to "About",   about_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>
-          <li><a href="http://news.railstutorial.org/">News</a></li>
-        </ul>
-      </nav>
-    </footer>
+<div class="footer">
+  <!--<div class="row">-->
+  <div class="col-lg-6 stats-box">
+    <div class="row">
+      <div class="col-xs-4">
+        <h1 class="pull-right">
+          <button type="button" class="btn btn-success" ng-class="alert.colour">
+            <i class="glyphicon glyphicon-euro" style="color:black" ng-class="alert.icon"></i>
+          </button>
+        </h1>
+      </div>
+      <div class="col-xs-8">
+        <!--<h1>{{numOfDealsToday.count}}</h1>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-4">
+        <span class="text-muted">Projects Today</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 stats-box">
+    <div class="row">
+      <div class="col-xs-4">
+        <h1 class="pull-right">
+          <button type="button" class="btn btn-success" ng-class="alert.colour">
+            <i class="glyphicon  glyphicon-euro" style="color:black" ng-class="alert.icon"></i>
+          </button>
+        </h1>
+      </div>
+      <div class="col-xs-8">
+        <!--<h1>{{numOfDeals.count}}</h1>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-4">
+        <span class="text-muted">Total Projects</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-lg-6 stats-box">
+      <div class="row">
+        <div class="col-xs-4">
+          <h1 class="pull-right">
+            <button type="button" class="btn btn-warning" ng-class="alert.colour">
+              <i class="glyphicon glyphicon-user" style="color:black" ng-class="alert.icon"></i>
+            </button>
+          </h1>
+        </div>
+        <div class="col-xs-8">
+          <!--<h1>{{numOfUsersToday.count}}</h1>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-4">
+          <span class="text-muted">Users Joined Today</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 stats-box">
+      <div class="row">
+        <div class="col-xs-4">
+          <h1 class="pull-right">
+            <button type="button" class="btn btn-warning" ng-class="alert.colour">
+              <i class="glyphicon glyphicon-user" style="color:black" ng-class="alert.icon"></i>
+            </button>
+          </h1>
+        </div>
+        <div class="col-xs-8">
+          <!--<h1>{{numOfUsers.count}}</h1>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-4">
+          <span class="text-muted">Total Users</span>
+        </div>
+      </div>
+    </div>
+
+
+</div>

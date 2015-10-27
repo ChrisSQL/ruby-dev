@@ -1,0 +1,28 @@
+
+
+rails generate model Project projectSubject:string projectType:string projectTitle:string projectWorth:string projectDueDate:date projectDetails:string projectEmail:string user:references
+
+rails generate controller Projects
+
+GEMS  devise, rails_admin, aasm, closure_tree
+https://www.ruby-toolbox.com/
+
+Navbar ////////////////////////
+
+Add Link to Download App, TimeTable, Users, Projects, Account
+
+Home Screen //////////////////
+
+Button to  Show/Hide Form for new project
+
+projectSubject:string  ComboBox with Add Button
+projectType:string     ComboBox
+projectTitle:string    TextField
+projectWorth:string    Number Selection
+projectDueDate:date    DatePicker
+projectDetails:string  text Area
+
+Footer ////////////////////////
+
+Add Links to PlayStore
+

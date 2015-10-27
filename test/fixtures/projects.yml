@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  projectSubject: MyString
+  projectType: MyString
+  projectTitle: MyString
+  projectWorth: MyString
+  projectDueDate: 2015-10-27
+  projectDetails: MyString
+  projectEmail: MyString
+  user_id: 
+
+two:
+  projectSubject: MyString
+  projectType: MyString
+  projectTitle: MyString
+  projectWorth: MyString
+  projectDueDate: 2015-10-27
+  projectDetails: MyString
+  projectEmail: MyString
+  user_id: 

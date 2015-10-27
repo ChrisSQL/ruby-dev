@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :projects, dependent: :destroy
+
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -72,6 +74,12 @@ class User < ActiveRecord::Base
     digest = send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  # Defines a proto-feed.
+  # See "Following users" for the full implementation.
+  def feed
+    Project.where("user_id = ?", id)
   end
 
   private
