@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootsy
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require tinymce-jquery
+
+
 

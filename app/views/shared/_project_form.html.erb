@@ -1,7 +1,64 @@
-<%= form_for(@project) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-      <%= f.text_area :projectTitle, placeholder: "Project Title...", size: "30x50" %>
-    </div>
-    <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+<div class="project-form">
+
+
+
+  <%= bootstrap_form_for(@project) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <div class="col-md-4">
+
+        <div class="field">
+          <%= f.text_field :projectTitle, label: "Title" %>
+        </div>
+
+
+        <div class="field">
+          <%= f.text_field :projectWorth, label: "Worth" %>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="field">
+          <%= f.text_field :projectSubject, label: "Subject" %>
+        </div>
+
+
+        <div class="field">
+          <%= f.text_field :projectDueDate, label: "Due Date" %>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="field">
+          <%= f.text_field :projectType, label: "Type" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :projectEmail, label: "Email" %>
+        </div>
+
+
+      </div>
+
+
+      <div class="col-md-12">
+        <div class="field">
+          <%= f.text_area :projectDetails, :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
+        </div>
+      </div>
+
+      <%= tinymce %>
+
+      <div class="field">
+        <%= f.submit "Save Entry", class: "btn-sm btn-danger" %>
+      </div>
+
+
+      </div>
+
+
+  <% end %>

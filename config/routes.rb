@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   get 'password_resets/new'
 
   get 'password_resets/edit'

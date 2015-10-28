@@ -11,6 +11,11 @@ Navbar ////////////////////////
 
 Add Link to Download App, TimeTable, Users, Projects, Account
 
+Change Account to Image that flashes when not logged in
+Add Project flashes when  logged in.
+
+Add project Links to homescreen when not on homescreen
+
 Home Screen //////////////////
 
 Button to  Show/Hide Form for new project

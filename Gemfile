@@ -13,6 +13,9 @@
     gem 'will_paginate',           '3.0.7'
     gem 'bootstrap-will_paginate', '0.0.10'
     gem 'faker'
+    gem 'bootsy'
+    gem 'tinymce-rails'
+    gem 'bootstrap_form'
  
     group :development, :test do
       gem 'sqlite3',     '1.3.9'

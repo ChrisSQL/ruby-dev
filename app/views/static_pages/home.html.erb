@@ -1,29 +1,42 @@
 <div class="home-screen">
 
+  <% if logged_in? %>
+
+      <div class="row">
+
+        <!--<aside class="col-md-12">-->
+
+        <section class="project_form">
+        <%= render 'shared/project_form' %>
+        </section>
+        <!--</aside>-->
+
+      </div>
+
+  <% else %>
+
+  <% end %>
 
 
-<% if logged_in? %>
-    <div class="row">
-      <!--<aside class="col-md-12">-->
+
+  <% if logged_in? %>
+      <div class="row">
+        <!--<aside class="col-md-12">-->
         <!--<section class="user_info">-->
-          <!--&lt;!&ndash;<%= render 'shared/user_info' %>&ndash;&gt;-->
+        <!--&lt;!&ndash;<%= render 'shared/user_info' %>&ndash;&gt;-->
         <!--</section>-->
         <!--<section class="project_form">-->
-          <!--&lt;!&ndash;<%= render 'shared/project_form' %>&ndash;&gt;-->
+        <!--&lt;!&ndash;<%= render 'shared/project_form' %>&ndash;&gt;-->
         <!--</section>-->
-      <!--</aside>-->
-      <div class="col-md-12">
-        <!--<h3>Project Feed</h3>-->
-        <%= render 'shared/feed' %>
+        <!--</aside>-->
+        <div class="col-md-12">
+          <!--<h3>Project Feed</h3>-->
+          <%= render 'shared/feed' %>
+        </div>
       </div>
-    </div>
-<% else %>
+  <% else %>
 
-
-
-
-
-
-<% end %>
+  <% end %>
 
 </div>
+
