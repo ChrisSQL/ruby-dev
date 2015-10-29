@@ -1,8 +1,35 @@
 <li id="project-<%= project.id %>">
-  <%= link_to gravatar_for(project.user), project.user %>
-  <span class="user"><%= link_to project.user.name, project.user %></span>
-  <span class="content"><%= project.projectTitle %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(project.created_at) %> ago.
-  </span>
+
+  <div class="row ">
+
+    <div class="col-md-1">
+
+      <%= link_to gravatar_for(project.user), "http://www.gravatar.com", target: '_blank', class: "img-responsive center-block" %>
+    <!--<span class="user"><%= link_to project.user.name, project.user %></span>-->
+
+    </div>
+
+    <div class="col-md-8">
+      <span class="subject"> <%= link_to project.projectSubject, current_user %>  (<%= project.projectWorth %>%)</span>
+      <span class="title"><%= project.projectTitle %></span>
+
+
+
+      <!--<span class="content"><%= project.projectDetails %></span>-->
+
+
+    </div>
+    <div class="col-md-3">
+
+      <!--<span class="timestamp"> <%= distance_of_time_in_words(Time.now, project.projectDueDate) %></span>-->
+      <span class="timestamp"> <%= (TimeDifference.between(Time.now, project.projectDueDate).in_days).round %></span>
+      <span class="sub-text">Days Left</span>
+
+
+
+    </div>
+
+  </div>
+
+
 </li>

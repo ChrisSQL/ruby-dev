@@ -18,10 +18,12 @@ class ProjectsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+
+
   private
 
   def project_params
-    params.require(:project).permit(:projectTitle)
+    params.require(:project).permit(:projectTitle, :projectSubject, :projectType, :projectWorth, :projectDueDate, :projectDetails)
   end
 
   def correct_user

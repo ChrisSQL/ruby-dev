@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(name:  "Example User",
-             email: "chrismaher.wit@gmail.com",
+User.create!(name:  "Example",
+             email: "chrismaher@gmail.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -16,7 +16,7 @@ User.create!(name:  "Example User",
 
 99.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n+1}@collegeplanner.ie"
   password = "password"
   User.create!(name:  name,
                email: email,
@@ -29,5 +29,9 @@ end
 users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.sentence(1)
-  users.each { |user| user.projects.create!(projectTitle: content) }
+  subject = Faker::Lorem.word
+  type = Faker::Lorem.word
+  worth = Faker::Number.between(1,100)
+  duedate = Faker::Date.forward(60)
+  users.each { |user| user.projects.create!(projectTitle: content, projectSubject: subject, projectType: type, projectWorth: worth, projectDueDate: duedate) }
 end

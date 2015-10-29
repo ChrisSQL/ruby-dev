@@ -166,7 +166,6 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
-  height: 50px;
 }
 
 .gravatar_edit {
@@ -223,7 +222,7 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-lighter;
   }
 }
 
@@ -232,47 +231,70 @@ input {
 .projects {
   list-style: none;
   padding: 0;
+  margin-top: 10px;
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    height: 110px;
   }
   .user {
     margin-top: 5em;
     padding-top: 0;
   }
-  .content {
+  .subject {
     display: block;
-    margin-left: 60px;
+    margin-left: 10px;
+    img {
+      display: block;
+      padding: 5px 0;
+      margin: 0px auto;
+    }
+    font-size: x-large;
+    font-weight: bold;
+
+  }
+  .title {
+    display: block;
+    margin-left: 10px;
     img {
       display: block;
       padding: 5px 0;
     }
+    font-size: large;
+    margin-top: 10px;
+
   }
   .timestamp {
-    color: $gray-light;
+    color: #000000;
     display: block;
-    margin-left: 60px;
+    text-align: center;
+    font-size: x-large;
+    //height: 100px;
+    margin-top: 10px;
+    font-weight: bold;
   }
   .gravatar {
     float: left;
     margin-right: 10px;
-    margin-top: 5px;
-    height: 50px;
-  }
-}
+    margin-left: 10px;
 
-aside {
-  textarea {
-    height: 105px;
-    margin-bottom: 5px;
-  }
-}
 
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
   }
+  .sub-text{
+
+    display: block;
+    text-align: center;
+
+  }
+
+  a{
+
+    color: #000000;
+
+  }
+
+
+
 }
 
 
@@ -284,34 +306,68 @@ span.picture {
   padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    height: 110px;
   }
   .user {
     margin-top: 5em;
     padding-top: 0;
   }
-  .content {
+  .subject {
     display: block;
-    margin-left: 60px;
+    margin-left: 10px;
+    img {
+      display: block;
+      padding: 5px 0;
+      margin: 0px auto;
+    }
+    font-size: x-large;
+    font-weight: bold;
+
+  }
+  .title {
+    display: block;
+    margin-left: 10px;
     img {
       display: block;
       padding: 5px 0;
     }
+    font-size: large;
+    margin-top: 10px;
+
   }
   .timestamp {
-    color: $gray-light;
+    color: #000000;
     display: block;
-    margin-left: 60px;
+    text-align: center;
+    font-size: x-large;
+    //height: 100px;
+    margin-top: 10px;
+    font-weight: bold;
   }
   .gravatar {
-    //float: left;
-    //margin-right: 10px;
-    //margin-top: 5px;
-    //height: 50px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+
+
   }
+  .sub-text{
+
+    display: block;
+    text-align: center;
+
+  }
+
+  a{
+
+    color: #000000;
+
+  }
+
+
+
 }
-
-
 
 .home-screen{
 
@@ -371,4 +427,11 @@ span.picture {
   display: none;
 
 }
+
+.right-button-header{
+
+  margin-right: 55px;
+
+}
+
 

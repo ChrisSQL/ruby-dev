@@ -13,4 +13,6 @@ class StaticPagesController < ApplicationController
      flash[:notice] = "Testing the flash"
   end
 
+
+
 end

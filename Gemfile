@@ -16,6 +16,7 @@
     gem 'bootsy'
     gem 'tinymce-rails'
     gem 'bootstrap_form'
+    gem 'time_difference'
  
     group :development, :test do
       gem 'sqlite3',     '1.3.9'
