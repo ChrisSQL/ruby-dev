@@ -418,7 +418,7 @@ input {
 
 .project-form{
 
-  display: none;
+  //display: none;
 
 }
 
@@ -434,4 +434,10 @@ input {
 
 }
 
+.update-button{
 
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+
+}

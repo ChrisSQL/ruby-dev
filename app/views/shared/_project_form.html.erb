@@ -1,6 +1,7 @@
+
+
+
 <div class="project-form">
-
-
 
   <%= bootstrap_form_for(@project) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
@@ -8,25 +9,11 @@
       <div class="col-md-4">
 
         <div class="field">
-          <%= f.text_field :projectTitle, label: "Title" %>
+          <%= f.text_field :projectTitle, :value=>params[:projectTitle] , label: "Title"%>
         </div>
 
-
         <div class="field">
-          <%= f.text_field :projectWorth, label: "Worth" %>
-        </div>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <div class="field">
-          <%= f.text_field :projectSubject, label: "Subject" %>
-        </div>
-
-
-        <div class="field">
-          <%= f.text_field :projectDueDate, label: "Due Date" %>
+          <%= f.text_field :projectWorth, :value=>params[:projectWorth] , label: "Worth" %>
         </div>
 
       </div>
@@ -34,11 +21,24 @@
       <div class="col-md-4">
 
         <div class="field">
-          <%= f.text_field :projectType, label: "Type" %>
+          <%= f.text_field :projectSubject, :value=>params[:projectSubject] , label: "Subject" %>
+        </div>
+
+
+        <div class="field">
+          <%= f.text_field :projectDueDate, :value=>params[:projectDueDate] , label: "Due Date" %>
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="field">
+          <%= f.text_field :projectType, :value=>params[:projectType] , label: "Type" %>
         </div>
 
         <div class="field">
-          <%= f.text_field :projectEmail, label: "Email" %>
+          <%= f.text_field :projectEmail, :value=>params[:projectID] , label: "Project ID" %>
         </div>
 
 
@@ -47,18 +47,17 @@
 
       <div class="col-md-12">
         <div class="field">
-          <%= f.text_area :projectDetails, :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
+          <%= f.text_area :projectDetails, :value=>params[:projectDetails] , :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
         </div>
       </div>
 
       <%= tinymce %>
 
       <div class="field">
-        <%= f.submit "Save Entry", class: "btn-sm btn-danger" %>
-      </div>
-
-
+        <%= f.submit "Save Entry",  class: "btn-sm btn-danger" %>
       </div>
 
 
   <% end %>
+
+</div>

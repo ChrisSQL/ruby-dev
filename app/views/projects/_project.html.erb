@@ -7,11 +7,13 @@
       <%= link_to gravatar_for(project.user), "http://www.gravatar.com", target: '_blank', class: "img-responsive center-block" %>
     <!--<span class="user"><%= link_to project.user.name, project.user %></span>-->
 
+
     </div>
 
     <div class="col-md-8">
-      <span class="subject"> <%= link_to project.projectSubject, current_user %>  (<%= project.projectWorth %>%)</span>
+      <span class="subject"> <%= link_to project.projectSubject, root_path(:projectSubject => project.projectSubject, :projectTitle => project.projectTitle, :projectType => project.projectType, :projectWorth => project.projectWorth, :projectDueDate => project.projectDueDate, :projectDetails => project.projectDetails, :projectID => project.__id__), 'data-no-turbolink' => true %>  (<%= project.projectWorth %>%)</span>
       <span class="title"><%= project.projectTitle %></span>
+
 
 
 
@@ -24,12 +26,16 @@
       <!--<span class="timestamp"> <%= distance_of_time_in_words(Time.now, project.projectDueDate) %></span>-->
       <span class="timestamp"> <%= (TimeDifference.between(Time.now, project.projectDueDate).in_days).round %></span>
       <span class="sub-text">Days Left</span>
+      <!--<button type="button" class="btn btn-danger btn-xs update-button">Update</button>-->
 
 
 
     </div>
 
+
   </div>
 
 
 </li>
+
+<!--// Send Projectid to function to fill form-->
