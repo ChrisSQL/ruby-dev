@@ -3,14 +3,9 @@
   <% if logged_in? %>
 
       <div class="row">
-
-        <!--<aside class="col-md-12">-->
-
         <section class="project_form">
-          <%= render 'shared/project_form' %>
-        </section>
 
-        <!--</aside>-->
+        </section>
 
       </div>
 
@@ -23,12 +18,14 @@
   <% if logged_in? %>
       <div class="row">
         <div class="col-md-12">
-          <%= render 'shared/feed' %>
+        </div>
+        <div class="col-md-12">
+
         </div>
       </div>
+
   <% else %>
 
   <% end %>
 
 </div>
-

@@ -18,5 +18,5 @@
 //= require_tree .
 //= require tinymce-jquery
 
-
+//= require bootstrap-datepicker
 

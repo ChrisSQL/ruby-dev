@@ -18,8 +18,7 @@ Add project Links to homescreen when not on homescreen
 
 Home Screen //////////////////
 
-Button to  Show/Hide Form for new project appears only on homescreen
-List of Project should have slide out form to update info and take notes
+If title parameter is not blank then run jquery function
 
 projectSubject:string  ComboBox with Add Button
 projectType:string     ComboBox
@@ -31,4 +30,5 @@ projectDetails:string  text Area
 Footer ////////////////////////
 
 Add Links to PlayStore
+
 

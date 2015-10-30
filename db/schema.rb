@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027210231) do
+ActiveRecord::Schema.define(version: 20151030140103) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.integer  "bootsy_resource_id"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20151027210231) do
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+
+  create_table "timetables", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -1,3 +1,8 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.datepicker').datepicker({format: "yyyy-mm-dd", autoclose: true});
+    });
+</script>
 
 
 
@@ -13,7 +18,7 @@
         </div>
 
         <div class="field">
-          <%= f.text_field :projectWorth, :value=>params[:projectWorth] , label: "Worth" %>
+          <%= f.select :projectWorth, options_for_select((0..100).to_a.map{|n| [n, n]}, params[:projectWorth]), label: "Worth"%>
         </div>
 
       </div>
@@ -26,7 +31,7 @@
 
 
         <div class="field">
-          <%= f.text_field :projectDueDate, :value=>params[:projectDueDate] , label: "Due Date" %>
+          <%= f.text_field :projectDueDate,  :class => 'datepicker', :value=>params[:projectDueDate] , label: "Due Date", :readonly => true %>
         </div>
 
       </div>
@@ -38,7 +43,7 @@
         </div>
 
         <div class="field">
-          <%= f.text_field :projectEmail, :value=>params[:projectID] , label: "Project ID" %>
+          <%= f.text_field :projectEmail, :value=>params[:projectID] , label: "Project ID", :readonly => true%>
         </div>
 
 

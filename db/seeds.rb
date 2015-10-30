@@ -27,7 +27,7 @@ User.create!(name:  "Chris Maher",
 end
 
 users = User.order(:created_at).take(6)
-50.times do
+10.times do
   content = Faker::Lorem.sentence(1)
   subject = Faker::Lorem.word
   type = Faker::Lorem.word
@@ -36,3 +36,4 @@ users = User.order(:created_at).take(6)
   details = Faker::Lorem.sentence(20)
   users.each { |user| user.projects.create!(projectTitle: content, projectSubject: subject, projectType: type, projectWorth: worth, projectDueDate: duedate, projectDetails: details) }
 end
+

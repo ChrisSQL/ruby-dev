@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dnl21btai
+  api_key: '492725672754357'
+  api_secret: 8pReeDa_hjLYOGF0fOTR6M6lTg0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dnl21btai
+  api_key: '492725672754357'
+  api_secret: 8pReeDa_hjLYOGF0fOTR6M6lTg0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dnl21btai
+  api_key: '492725672754357'
+  api_secret: 8pReeDa_hjLYOGF0fOTR6M6lTg0
+  enhance_image_tag: true
+  static_image_support: false

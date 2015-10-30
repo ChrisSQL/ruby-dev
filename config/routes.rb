@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   get 'password_resets/new'
 
@@ -12,6 +10,7 @@ Rails.application.routes.draw do
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
+  get 'timetable' => 'static_pages#timetable'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -21,6 +20,8 @@ Rails.application.routes.draw do
   resources :users # NEW LINE
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :projects,          only: [:create, :destroy, :edit, :update]
+  resources :timetables, only: [:index, :new, :create, :destroy]
+
 
 
 end
