@@ -1,0 +1,34 @@
+<div class="home-screen">
+
+  <% if logged_in? %>
+
+      <div class="row">
+
+        <!--<aside class="col-md-12">-->
+
+        <section class="project_form">
+          <%= render 'shared/project_form' %>
+        </section>
+
+        <!--</aside>-->
+
+      </div>
+
+  <% else %>
+
+  <% end %>
+
+
+
+  <% if logged_in? %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'shared/feed' %>
+        </div>
+      </div>
+  <% else %>
+
+  <% end %>
+
+</div>
+

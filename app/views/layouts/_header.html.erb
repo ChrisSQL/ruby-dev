@@ -23,7 +23,7 @@
             <% else %>
                 <li><%= link_to image_tag("add.png"), root_path, 'data-no-turbolink' => true, class: "toggle-form tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Add Project' %></li>
            <% end %>
-            <li><%= link_to image_tag("add.png"), timetables_path, 'data-no-turbolink' => true, class: "tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'View Timetable' %></li>
+            <li><%= link_to image_tag("timetable.png"), timetables_path, 'data-no-turbolink' => true, class: "tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'View Timetable' %></li>
 
             <!--<li><%= link_to image_tag("add.png"), "#", 'data-no-turbolink' => true, class: "toggle-form tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Add Project' %></li>-->
             <% if current_user.admin? %><li><%= link_to image_tag("users.png"), users_path , class: "tip" ,'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Users'%></li><% end %>

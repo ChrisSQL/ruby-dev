@@ -8,9 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @user = User.find(params[:id])
-    @projects = @user.projects.paginate(page: params[:page]).reorder("projectDueDate ASC")
+    @projects = @user.projects.paginate(page: params[:page]).reorder("project_due_date ASC")
   end
 
   def new

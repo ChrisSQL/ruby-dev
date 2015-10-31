@@ -13,11 +13,11 @@
           <div class="col-md-4">
 
             <div class="field">
-              <%= f.text_field :project_title, :value => params[:project_title], label: "Title" %>
+              <%= f.text_field :project_title, :value => @project.project_title , label: "Title" %>
             </div>
 
             <div class="field">
-              <%= f.select :project_worth, options_for_select((0..100).to_a.map { |n| [n, n] }, params[:project_worth]), label: "Worth" %>
+              <%= f.select :project_worth, options_for_select((0..100).to_a.map { |n| [n, n] }, @project.project_worth), label: "Worth" %>
             </div>
 
           </div>
@@ -25,32 +25,28 @@
           <div class="col-md-4">
 
             <div class="field">
-              <%= f.text_field :project_subject, :value => params[:project_subject], label: "Subject" %>
+              <%= f.text_field :project_subject, :value => @project.project_subject, label: "Subject" %>
             </div>
 
 
             <div class="field">
-              <%= f.text_field :project_due_date, :class => 'datepicker', :value => params[:project_due_date], label: "Due Date", :readonly => true %>
+              <%= f.text_field :project_due_date, :class => 'datepicker', :value => @project.project_due_date, label: "Due Date", :readonly => true %>
             </div>
 
           </div>
 
           <div class="col-md-4">
             <div class="field">
-              <%= f.text_field :project_type, :value => params[:project_type], label: "Type" %>
+              <%= f.text_field :project_type, :value => @project.project_type, label: "Type" %>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="field">
-              <%= f.hidden_field(:id, @project.id) if @project.persisted? %>
-            </div>
-          </div>
+
 
 
           <div class="col-md-12">
             <div class="field">
-              <%= f.text_area :project_details, :value => params[:project_details], :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
+              <%= f.text_area :project_details, :value => @project.project_details, :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
             </div>
           </div>
 

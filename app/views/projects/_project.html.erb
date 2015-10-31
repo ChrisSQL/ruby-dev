@@ -11,7 +11,8 @@
     </div>
 
     <div class="col-md-8">
-      <span class="subject"> <%= link_to project.project_subject, root_path(:project_subject => project.project_subject, :project_title => project.project_title, :project_type => project.project_type, :project_worth => project.project_worth, :project_due_date => project.project_due_date, :project_details => project.project_details, :id => project.__id__), 'data-no-turbolink' => true %>  (<%= project.project_worth %>%)</span>
+      <span class="subject"> <%= link_to project.project_subject, project, 'data-no-turbolink' => true %>  (<%= project.project_worth %>%)</span>
+
       <span class="title"><%= project.project_title %></span>
 
 

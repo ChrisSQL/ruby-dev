@@ -29,6 +29,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def show
+    @feed_items = current_user.feed.paginate(page: params[:page]).reorder("project_due_date ASC")
+    @project = current_user.projects.find(params[:id])
+  end
+
     private
 
   def project_params
