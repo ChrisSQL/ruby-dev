@@ -3,15 +3,11 @@
   <% if logged_in? %>
 
       <div class="row">
-
-        <!--<aside class="col-md-12">-->
-
-        <section class="project_form">
-          <%= render 'shared/project_form' %>
-        </section>
-
-        <!--</aside>-->
-
+        <aside class="col-md-12">
+          <section class="project_form">
+            <%= render 'shared/project_form' %>
+          </section>
+        </aside>
       </div>
 
   <% else %>

@@ -13,7 +13,7 @@
           <div class="col-md-4">
 
             <div class="field">
-              <%= f.text_field :project_title, :value => @project.project_title , label: "Title" %>
+              <%= f.text_field :project_title,  :required => true, :value => @project.project_title , label: "Title" %>
             </div>
 
             <div class="field">
@@ -30,14 +30,14 @@
 
 
             <div class="field">
-              <%= f.text_field :project_due_date, :class => 'datepicker', :value => @project.project_due_date, label: "Due Date", :readonly => true %>
+              <%= f.text_field :project_due_date,  :required => true, :class => 'datepicker', :value => @project.project_due_date, label: "Due Date", :readonly => true %>
             </div>
 
           </div>
 
           <div class="col-md-4">
             <div class="field">
-              <%= f.text_field :project_type, :value => @project.project_type, label: "Type" %>
+              <%= f.text_field :project_type,  :required => true, :value => @project.project_type, label: "Type" %>
             </div>
           </div>
 

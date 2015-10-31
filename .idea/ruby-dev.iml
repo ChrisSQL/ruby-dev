@@ -138,7 +138,6 @@
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.2.0.0, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v0.0.10, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap_form (v2.3.0, rbenv: 2.2.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootsy (v2.1.0, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.10.6, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v3.4.0, rbenv: 2.2.3) [gem]" level="application" />
@@ -163,7 +162,6 @@
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.0.3, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.6.3, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v2.6.2, rbenv: 2.2.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_magick (v4.3.6, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_portile (v0.6.2, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.8.2, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.11.2, rbenv: 2.2.3) [gem]" level="application" />
@@ -182,7 +180,6 @@
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.2.4, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.0, rbenv: 2.2.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="remotipart (v1.2.1, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rest-client (v1.8.0, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.19, rbenv: 2.2.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v5.0.2, rbenv: 2.2.3) [gem]" level="application" />
