@@ -11,20 +11,20 @@
     </div>
 
     <div class="col-md-8">
-      <span class="subject"> <%= link_to project.projectSubject, root_path(:projectSubject => project.projectSubject, :projectTitle => project.projectTitle, :projectType => project.projectType, :projectWorth => project.projectWorth, :projectDueDate => project.projectDueDate, :projectDetails => project.projectDetails, :projectID => project.__id__), 'data-no-turbolink' => true %>  (<%= project.projectWorth %>%)</span>
-      <span class="title"><%= project.projectTitle %></span>
+      <span class="subject"> <%= link_to project.project_subject, root_path(:project_subject => project.project_subject, :project_title => project.project_title, :project_type => project.project_type, :project_worth => project.project_worth, :project_due_date => project.project_due_date, :project_details => project.project_details, :id => project.__id__), 'data-no-turbolink' => true %>  (<%= project.project_worth %>%)</span>
+      <span class="title"><%= project.project_title %></span>
 
 
 
 
-      <!--<span class="content"><%= project.projectDetails %></span>-->
+      <!--<span class="content"><%= project.project_details %></span>-->
 
 
     </div>
     <div class="col-md-3">
 
-      <!--<span class="timestamp"> <%= distance_of_time_in_words(Time.now, project.projectDueDate) %></span>-->
-      <span class="timestamp"> <%= (TimeDifference.between(Time.now, project.projectDueDate).in_days).round %></span>
+      <!--<span class="timestamp"> <%= distance_of_time_in_words(Time.now, project.project_due_date) %></span>-->
+      <span class="timestamp"> <%= (TimeDifference.between(Time.now, project.project_due_date).in_days).round %></span>
       <span class="sub-text">Days Left</span>
       <!--<button type="button" class="btn btn-danger btn-xs update-button">Update</button>-->
 

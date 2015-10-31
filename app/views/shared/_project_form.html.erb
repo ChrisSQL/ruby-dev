@@ -1,68 +1,70 @@
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.datepicker').datepicker({format: "yyyy-mm-dd", autoclose: true});
     });
 </script>
 
 
+    <div class="project-form">
 
-<div class="project-form">
+      <%= bootstrap_form_for(@project) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
 
-  <%= bootstrap_form_for(@project) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+          <div class="col-md-4">
 
-      <div class="col-md-4">
+            <div class="field">
+              <%= f.text_field :project_title, :value => params[:project_title], label: "Title" %>
+            </div>
 
-        <div class="field">
-          <%= f.text_field :projectTitle, :value=>params[:projectTitle] , label: "Title"%>
-        </div>
+            <div class="field">
+              <%= f.select :project_worth, options_for_select((0..100).to_a.map { |n| [n, n] }, params[:project_worth]), label: "Worth" %>
+            </div>
 
-        <div class="field">
-          <%= f.select :projectWorth, options_for_select((0..100).to_a.map{|n| [n, n]}, params[:projectWorth]), label: "Worth"%>
-        </div>
+          </div>
 
-      </div>
+          <div class="col-md-4">
 
-      <div class="col-md-4">
-
-        <div class="field">
-          <%= f.text_field :projectSubject, :value=>params[:projectSubject] , label: "Subject" %>
-        </div>
-
-
-        <div class="field">
-          <%= f.text_field :projectDueDate,  :class => 'datepicker', :value=>params[:projectDueDate] , label: "Due Date", :readonly => true %>
-        </div>
-
-      </div>
-
-      <div class="col-md-4">
-
-        <div class="field">
-          <%= f.text_field :projectType, :value=>params[:projectType] , label: "Type" %>
-        </div>
-
-        <div class="field">
-          <%= f.text_field :projectEmail, :value=>params[:projectID] , label: "Project ID", :readonly => true%>
-        </div>
+            <div class="field">
+              <%= f.text_field :project_subject, :value => params[:project_subject], label: "Subject" %>
+            </div>
 
 
-      </div>
+            <div class="field">
+              <%= f.text_field :project_due_date, :class => 'datepicker', :value => params[:project_due_date], label: "Due Date", :readonly => true %>
+            </div>
+
+          </div>
+
+          <div class="col-md-4">
+            <div class="field">
+              <%= f.text_field :project_type, :value => params[:project_type], label: "Type" %>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="field">
+              <%= f.hidden_field(:id, @project.id) if @project.persisted? %>
+            </div>
+          </div>
 
 
-      <div class="col-md-12">
-        <div class="field">
-          <%= f.text_area :projectDetails, :value=>params[:projectDetails] , :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
-        </div>
-      </div>
+          <div class="col-md-12">
+            <div class="field">
+              <%= f.text_area :project_details, :value => params[:project_details], :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
+            </div>
+          </div>
 
-      <%= tinymce %>
-
-      <div class="field">
-        <%= f.submit "Save Entry",  class: "btn-sm btn-danger" %>
-      </div>
+          <%= tinymce %>
 
 
-  <% end %>
 
-</div>
+
+          <div class="field project-save-button">
+            <%= f.submit "Save Entry", class: "btn-sm btn-danger" %>
+          </div>
+
+
+      <% end %>
+
+    </div>
+

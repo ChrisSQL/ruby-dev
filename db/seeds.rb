@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(name:  "Chris Maher",
-             email: "chrismaher@gmail.com",
+User.create!(name:  "A User",
+             email: "a@a.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -34,6 +34,11 @@ users = User.order(:created_at).take(6)
   worth = Faker::Number.between(1,100)
   duedate = Faker::Date.forward(60)
   details = Faker::Lorem.sentence(20)
-  users.each { |user| user.projects.create!(projectTitle: content, projectSubject: subject, projectType: type, projectWorth: worth, projectDueDate: duedate, projectDetails: details) }
+  users.each { |user| user.projects.create!(project_title: content,
+                                            project_subject: subject,
+                                            project_type: type,
+                                            project_worth: worth,
+                                            project_due_date: duedate,
+                                            project_details: details) }
 end
 

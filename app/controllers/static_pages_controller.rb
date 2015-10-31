@@ -1,14 +1,10 @@
 class StaticPagesController < ApplicationController
 
-
-
-
   def home
 
     if logged_in?
-
-    @project = current_user.projects.build if logged_in?
-    @feed_items = current_user.feed.paginate(page: params[:page]).reorder("projectDueDate ASC")
+      @project = current_user.projects.build if logged_in?
+      @feed_items = current_user.feed.paginate(page: params[:page]).reorder("project_due_date ASC")
     end
   end
 
@@ -17,9 +13,10 @@ class StaticPagesController < ApplicationController
     if logged_in?
 
       @project = current_user.projects.build if logged_in?
-      @feed_items = current_user.feed.paginate(page: params[:page]).reorder("projectDueDate ASC")
+      @feed_items = current_user.feed.paginate(page: params[:page]).reorder("project_due_date ASC")
     end
   end
+
 
   def show
     @user = User.find(params[:id])
@@ -28,11 +25,10 @@ class StaticPagesController < ApplicationController
 
   def help
   end
-  
-  def about
-     flash[:notice] = "Testing the flash"
-  end
 
+  def about
+    flash[:notice] = "Testing the flash"
+  end
 
 
 end

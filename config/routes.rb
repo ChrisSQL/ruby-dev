@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :users # NEW LINE
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :projects,          only: [:create, :destroy, :edit, :update]
+  resources :projects
   resources :timetables, only: [:index, :new, :create, :destroy]
 
 

@@ -1,6 +1,5 @@
 
 
-rails generate model Project projectSubject:string projectType:string projectTitle:string projectWorth:string projectDueDate:date projectDetails:string projectEmail:string user:references
 
 rails generate controller Projects
 
@@ -20,12 +19,7 @@ Home Screen //////////////////
 
 If title parameter is not blank then run jquery function
 
-projectSubject:string  ComboBox with Add Button
-projectType:string     ComboBox
-projectTitle:string    TextField
-projectWorth:string    Number Selection
-projectDueDate:date    DatePicker
-projectDetails:string  text Area
+Update Project instead of save.
 
 Footer ////////////////////////
 

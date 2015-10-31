@@ -28,16 +28,15 @@ ActiveRecord::Schema.define(version: 20151030140103) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string   "projectSubject"
-    t.string   "projectType"
-    t.string   "projectTitle"
-    t.string   "projectWorth"
-    t.date     "projectDueDate"
-    t.string   "projectDetails"
-    t.string   "projectEmail"
+    t.string   "project_subject"
+    t.string   "project_type"
+    t.string   "project_title"
+    t.string   "project_worth"
+    t.date     "project_due_date"
+    t.string   "project_details"
     t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
