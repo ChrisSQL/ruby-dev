@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def mobile
     @user = User.new
+    @skip_footer = true
   end
 
   def create

@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <title>College Planner <%= yield(:title) %></title>
-        <%= stylesheet_link_tag 'application', media: 'all',
-                                               'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= csrf_meta_tags %>
-        <!--[if lt IE 9]>
-          <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-          </script>
-        <![endif]-->
-      </head>
-      <body>
-        <%= render 'layouts/header' %>    <!-- NEW LINE -->
-        <div class="container">
-        
-        <% flash.each do |message_type, message| %>    <!-- START NEW CODE  -->
-            <div class="alert alert-<%= message_type %>"><%= message %></div>
-          <% end %>                                      <!-- END NEW CODE  -->
+<html>
+<head>
+  <title>College Planner <%= yield(:title) %></title>
+  <%= stylesheet_link_tag 'application', media: 'all',
+                          'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+  </script>
+  <![endif]-->
+</head>
+<body>
 
-          <%= yield %>
-          <%= render 'layouts/footer' %>    <!-- NEW LINE -->
+  <%= render 'layouts/header' unless @skip_footer%>    <!-- NEW LINE -->
 
-          <!--<%= debug(params) if Rails.env.development? %>   -->
+<div class="container">
+
+  <% flash.each do |message_type, message| %>    <!-- START NEW CODE  -->
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>                                      <!-- END NEW CODE  -->
+
+  <%= yield %>
+
+    <%= render 'layouts/footer' unless @skip_footer %>
+
+  <!--<%= debug(params) if Rails.env.development? %>   -->
 
 
-        </div>
-      </body>
-    </html>
+</div>
+</body>
+</html>
