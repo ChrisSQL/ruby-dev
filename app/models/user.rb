@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
+  before_create :generate_authentication_token
 
   attr_accessor :remember_token
   before_save { |user| user.email = email.downcase }
@@ -96,7 +97,12 @@ class User < ActiveRecord::Base
     self.activation_digest = User.digest(activation_token)
   end
 
-
+  def generate_authentication_token
+    loop do
+      self.authentication_token = SecureRandom.base64(64)
+      break unless User.find_by(authentication_token: authentication_token)
+    end
+  end
 
 
 

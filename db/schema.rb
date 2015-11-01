@@ -11,57 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030140103) do
-
-  create_table "bootsy_image_galleries", force: :cascade do |t|
-    t.integer  "bootsy_resource_id"
-    t.string   "bootsy_resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "bootsy_images", force: :cascade do |t|
-    t.string   "image_file"
-    t.integer  "image_gallery_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20151101013926) do
 
   create_table "projects", force: :cascade do |t|
-    t.string   "project_subject"
-    t.string   "project_type"
-    t.string   "project_title"
-    t.string   "project_worth"
+    t.string   "project_subject",  limit: 255
+    t.string   "project_type",     limit: 255
+    t.string   "project_title",    limit: 255
+    t.string   "project_worth",    limit: 255
     t.date     "project_due_date"
-    t.string   "project_details"
-    t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "project_details",  limit: 255
+    t.integer  "user_id",          limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
-  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "timetables", force: :cascade do |t|
-    t.string   "name"
-    t.string   "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "attachment", limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.string   "password_digest"
-    t.string   "remember_digest"
+    t.string   "name",                 limit: 255
+    t.string   "email",                limit: 255
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.string   "password_digest",      limit: 255
+    t.string   "remember_digest",      limit: 255
     t.boolean  "admin"
-    t.string   "activation_digest"
-    t.boolean  "activated",         default: false
+    t.string   "activation_digest",    limit: 255
+    t.boolean  "activated",                        default: false
     t.datetime "activated_at"
     t.datetime "reset_sent_at"
+    t.string   "authentication_token", limit: 255
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "projects", "users"
 end

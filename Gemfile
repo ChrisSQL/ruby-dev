@@ -19,6 +19,21 @@ gem 'time_difference'
 gem 'bootstrap-datepicker-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.9'
+gem 'mysql2', '~> 0.3.18'
+gem 'arel',                    '~> 6.0.0'
+
+gem 'pg'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'active_hash_relation'
+
+#api related
+gem 'pundit', '~> 0.3.0'
+#gem 'active_model_serializers',
+#  git: 'git@github.com:rails-api/active_model_serializers.git',
+#  branch: '0-9-stable'
+
+gem 'active_model_serializers', '0.9.2'
+gem 'kaminari', '~> 0.16.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'
@@ -28,7 +43,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg', '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
 
