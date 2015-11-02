@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  use_doorkeeper
   get 'password_resets/new'
 
   get 'password_resets/edit'

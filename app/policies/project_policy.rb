@@ -1,4 +1,4 @@
-class MicropostPolicy < ApplicationPolicy
+class ProjectPolicy < ApplicationPolicy
   def show?
     return true
   end
