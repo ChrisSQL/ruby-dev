@@ -15,6 +15,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-color: #fff;
 }
 
 section {
@@ -418,12 +419,14 @@ span.picture {
 
   border: #dddddd 1px solid;
   padding: 10px;
-  min-height: 1000px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   margin-top: 20px;
 
+
 }
+
+
 
 .navbar-inverse{
 
@@ -500,8 +503,50 @@ span.picture {
 
 }
 
-//body{
-//
-//  background-color: #f7f7f7;
-//
-//}
+.home-screen-loggedout{
+
+  border: #26ae90 1px solid;
+
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+
+}
+
+
+.home-logo-center{
+
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  display: block;
+
+
+}
+
+.homescreen-text{
+
+  padding-bottom: 50px;
+  font-size: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+
+}
+
+.home-buttons{
+
+  margin: 0 auto;
+  //margin-top: 80px;
+  margin-bottom: 50px;
+  display: block;
+  text-align: center;
+
+}
+
+.home-buttons .btn{
+
+  margin: 20px;
+  border: #26ae90 1px solid;
+
+}

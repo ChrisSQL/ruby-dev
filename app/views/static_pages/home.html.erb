@@ -1,7 +1,5 @@
-<div class="home-screen">
-
-  <% if logged_in? %>
-
+<% if logged_in? %>
+    <div class="home-screen">
       <div class="row">
         <aside class="col-md-12">
           <section class="project_form">
@@ -9,22 +7,45 @@
           </section>
         </aside>
       </div>
+    </div>
+<% else %>
 
-  <% else %>
-
-  <% end %>
-
-
-
-  <% if logged_in? %>
+<% end %>
+<% if logged_in? %>
+    <div class="home-screen">
       <div class="row">
         <div class="col-md-12">
           <%= render 'shared/feed' %>
         </div>
       </div>
-  <% else %>
+    </div>
+<% else %>
 
-  <% end %>
+    <div class="home-screen-loggedout">
 
-</div>
+
+      <%= image_tag("logo_150.png", class: "home-logo-center text-center", :alt => "College Planner") %>
+
+      <p class="text-center homescreen-text">College Planner is designed to help you keep track of
+        work.</br>
+        Join <%= @total_users %> other Students who have already posted <%= @total_projects %> projects.</p>
+
+        <div class="home-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.chris.collegeplanner" class="btn btn-default btn-lg "><span class="glyphicon glyphicon-phone"></span> Download</a>
+
+        <a href="/signup" class="btn btn-default btn-lg "><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+<% end %>
+
+
 

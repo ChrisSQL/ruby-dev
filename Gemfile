@@ -19,7 +19,7 @@ gem 'time_difference'
 gem 'bootstrap-datepicker-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.9'
-gem 'mysql2', '~> 0.3.18'
+gem 'mysql'
 gem 'arel',                    '~> 6.0.0'
 
 gem 'pg'
