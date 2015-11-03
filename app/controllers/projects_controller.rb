@@ -45,6 +45,8 @@ class ProjectsController < ApplicationController
     redirect_to root_url if @project.nil?
   end
 
+
+
 end
 
 # Need to update project Params

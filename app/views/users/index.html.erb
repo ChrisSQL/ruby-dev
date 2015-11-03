@@ -1,9 +1,12 @@
 <% provide(:title, 'All users') %>
 
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+<div class="home-screen">
 
-<%= will_paginate %>
+  <ul class="users">
+    <%= render @users %>
+  </ul>
 
+  <%= will_paginate %>
+
+</div>

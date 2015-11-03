@@ -2,10 +2,13 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="3071179589">
     <data-source source="LOCAL" name="Rails ruby-dev: development" uuid="83016da4-24be-435e-a5a0-7dff46b8c8e5">
-      <driver-ref>sqlite.xerial</driver-ref>
+      <driver-ref>3b2b7722-d7cd-4465-a258-e7d677e86f4a</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/collegeplanner</jdbc-url>
+      <explain-plan-config>
+        <provider>com.intellij.database.plan.mysql.MysqlExplainPlanProvider</provider>
+      </explain-plan-config>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/mysql-connector-license.txt</url>
@@ -16,10 +19,13 @@
       </libraries>
     </data-source>
     <data-source source="LOCAL" name="Rails ruby-dev: test" uuid="aaa74943-8429-410d-94cb-8b21c4f0f0ab">
-      <driver-ref>sqlite.xerial</driver-ref>
+      <driver-ref>3b2b7722-d7cd-4465-a258-e7d677e86f4a</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/db/test.sqlite3</jdbc-url>
+      <explain-plan-config>
+        <provider>com.intellij.database.plan.mysql.MysqlExplainPlanProvider</provider>
+      </explain-plan-config>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/mysql-connector-license.txt</url>
