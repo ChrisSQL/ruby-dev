@@ -37,7 +37,7 @@
 
           <div class="col-md-4">
             <div class="field">
-              <%= f.text_field :project_type,  :required => true, :value => @project.project_type, label: "Type" %>
+              <%= f.select :project_type, options_for_select(types), :value => @project.project_type, label: "Type"  %>
             </div>
           </div>
 
