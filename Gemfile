@@ -23,6 +23,7 @@ gem 'mysql2', '~> 0.3.18'
 gem 'arel',                    '~> 6.0.0'
 gem 'sidekiq'
 gem 'doorkeeper'
+gem "administrate"
 
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'

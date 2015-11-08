@@ -28,8 +28,6 @@ class UserDashboard < Administrate::BaseDashboard
     uid: Field::String,
     oauth_token: Field::String,
     oauth_expires_at: Field::DateTime,
-    given_name: Field::String,
-    surname: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -69,7 +67,5 @@ class UserDashboard < Administrate::BaseDashboard
     :uid,
     :oauth_token,
     :oauth_expires_at,
-    :given_name,
-    :surname,
   ]
 end
