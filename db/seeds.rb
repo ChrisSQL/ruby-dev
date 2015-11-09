@@ -43,7 +43,7 @@ users = User.order(:created_at).take(6)
 end
 
 users = User.order(:created_at).take(6)
-1.times do
+100.times do
   name = Faker::Lorem.sentence(1)
   attachment = Faker::Lorem.word
   users.each { |user| user.timetables.create!(name: name,
