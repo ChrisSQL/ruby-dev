@@ -22,6 +22,7 @@
         <tr>
           <td><%= timetable.name %></td>
           <td><%= link_to "Download timetable", timetable.attachment_url %></td>
+          <h1><<%= image_tag timetable.attachment %>/h1>
           <td><%= button_to "Delete", timetable, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{timetable.name}?" %></td>
         </tr>
     <% end %>

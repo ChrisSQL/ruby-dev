@@ -1,0 +1,25 @@
+<% if @feed_items3.any? %>
+
+    <ol class="timetables thumbnail">
+      <%= render @feed_items3 %>
+    </ol>
+    <%= will_paginate @feed_items3 , class: "text-center" %>
+
+<% else %>
+
+
+    <%= bootstrap_form_for (@timetable), html: { multipart: true } do |f| %>
+    <div class="row">
+    <div class="col-lg-12">
+      <%= f.hidden_field :name, :value => Time.now, :readonly => true%>
+    </div>
+    <div class="col-lg-12">
+      <%= f.file_field :attachment %>
+    </div>
+      <div class="col-lg-12">
+        <%= f.submit "Save Timetable", class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+
+<% end %>

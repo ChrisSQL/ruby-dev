@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20151103175345) do
   create_table "timetables", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "attachment", limit: 255
+    t.integer  "user_id",          limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

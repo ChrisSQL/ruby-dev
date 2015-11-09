@@ -27,7 +27,7 @@
       <!--<span class="timestamp"> <%= distance_of_time_in_words(Time.now, project.project_due_date) %></span>-->
       <span class="timestamp"> <%= (TimeDifference.between(Time.now, project.project_due_date).in_days).round %></span>
       <span class="sub-text">Days Left</span>
-      <!--<button type="button" class="btn btn-danger btn-xs update-button">Update</button>-->
+      <span class="sub-text"><%= link_to "", project, method: :delete, class: "btn-sm btn-danger  glyphicon glyphicon-remove", :data => {:confirm => "Delete #{project.project_title}?"}%></span>
 
 
 
@@ -35,6 +35,8 @@
 
 
   </div>
+
+
 
 
 </li>

@@ -1,0 +1,65 @@
+Tutorial 4
+
+Creating a data model - Auto Adds ID
+rails generate scaffold User name:string email:string
+After changes to db
+bundle exec rake db:migrate
+
+Tutorial 5
+
+/////// Static
+
+rails generate controller StaticPages home help --no-test-framework <-- Generator
+
+Create a HTML file in the public folder
+Manually Add a ROUTE through config/routes.rb
+-- get "static_pages/about" -- NEW LINE
+app/views/ <-- View Files
+Then add to Controller -- If error create template(View) in app/views etc
+
+//////// Dynamic
+
+--Embedded Ruby
+<% provide(:title, 'Home') %> <-- Converts Home String to :title symbol
+
+Tutorial 6
+
+Partials - Header/Footer
+<%= render 'layouts/footer' %>    <!-- NEW LINE -->
+views/layout/_footer.html.erb
+
+<%= render 'layouts/header' %>
+        <div class="container">
+          <%= yield %>
+          <%= render 'layouts/footer' %>    <!-- NEW LINE -->
+         </div>
+
+Named Routes
+
+------ config/routes.rb
+      Rails.application.routes.draw do
+          root 'static_pages#home'
+
+          get 'help'    => 'static_pages#help'
+          get 'about'   => 'static_pages#about'
+          get 'contact' => 'static_pages#contact'
+          get 'signup'  => 'users#new'
+
+      end
+
+
+------ views/layout/_footer.html.erb
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "sample app", root_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",    root_path %></li>
+            <li><%= link_to "Help",    help_path %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+

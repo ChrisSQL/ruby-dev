@@ -84,6 +84,10 @@ class User < ActiveRecord::Base
     Project.where("user_id = ?", id)
   end
 
+  def feed3
+    Timetable.where("user_id = ?", id)
+  end
+
   private
 
   # Converts email to all lower-case.

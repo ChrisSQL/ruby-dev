@@ -11,7 +11,15 @@
 <% else %>
 
 <% end %>
+
 <% if logged_in? %>
+    <div class="home-screen">
+      <div class="row">
+        <div class="col-md-12 timetable-show">
+          <%= render 'shared/feed3' %>
+        </div>
+      </div>
+    </div>
     <div class="home-screen">
       <div class="row">
         <div class="col-md-12">
@@ -35,12 +43,6 @@
 
         <a href="/signup" class="btn btn-default btn-lg "><span class="glyphicon glyphicon-user"></span> Sign Up</a>
         </div>
-
-
-
-
-
-
 
 
     </div>

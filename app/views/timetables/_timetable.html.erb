@@ -1,0 +1,7 @@
+<li id="timetable-<%= timetable.id %>">
+
+  <td><%= image_tag timetable.attachment.url, class: "timetable-image" %></td>
+  <td><%= button_to "Delete", timetable, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{timetable.name}?" %></td>
+
+
+</li>

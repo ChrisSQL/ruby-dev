@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
-  get 'timetable' => 'static_pages#timetable'
   get 'signup' => 'users#new'
   get 'mobile' => 'users#mobile'
   get 'login' => 'sessions#new'

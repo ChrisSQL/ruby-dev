@@ -3,6 +3,7 @@ class CreateTimetables < ActiveRecord::Migration
     create_table :timetables do |t|
       t.string :name
       t.string :attachment
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end
