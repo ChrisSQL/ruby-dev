@@ -271,7 +271,7 @@ input {
     text-align: center;
     font-size: x-large;
     //height: 100px;
-    margin-top: 10px;
+    //margin-top: 10px;
     font-weight: bold;
   }
   .gravatar {
@@ -297,8 +297,6 @@ input {
 
 
 }
-
-
 
 /* posts */
 
@@ -574,5 +572,12 @@ span.picture {
     border-bottom: 1px solid #e8e8e8;
     max-height: 1000px;
   }
+
+}
+
+.sign-up-welcome{
+
+  margin: 10px;
+  height: 100%;
 
 }

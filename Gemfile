@@ -24,6 +24,8 @@ gem 'arel',                    '~> 6.0.0'
 gem 'sidekiq'
 gem 'doorkeeper'
 gem "administrate"
+gem "gritter", "1.2.0"
+gem "recaptcha", :require => "recaptcha/rails"
 
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'

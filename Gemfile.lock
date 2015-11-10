@@ -121,6 +121,7 @@ GEM
       i18n (~> 0.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gritter (1.2.0)
     hitimes (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -196,6 +197,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    recaptcha (0.4.0)
     redis (3.2.1)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
@@ -274,6 +276,7 @@ DEPENDENCIES
   coffee-rails (= 4.1.0)
   doorkeeper
   faker
+  gritter (= 1.2.0)
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
   kaminari (~> 0.16.1)
@@ -283,6 +286,7 @@ DEPENDENCIES
   rack-cors
   rails (= 4.2.4)
   rails_12factor (= 0.0.2)
+  recaptcha
   sass-rails (= 5.0.2)
   sdoc (= 0.4.0)
   sidekiq

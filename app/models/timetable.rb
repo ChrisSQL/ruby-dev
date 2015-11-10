@@ -1,4 +1,5 @@
 class Timetable < ActiveRecord::Base
+
   belongs_to :user
   validates :user_id, presence: true
   mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.

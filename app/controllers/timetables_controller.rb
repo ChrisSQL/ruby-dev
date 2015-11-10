@@ -22,7 +22,7 @@ class TimetablesController < ApplicationController
   def destroy
     @timetable = Timetable.find(params[:id])
     @timetable.destroy
-    redirect_to root_path, notice:  "The timetable #{@timetable.name} has been deleted."
+    redirect_to root_path
   end
 
   private

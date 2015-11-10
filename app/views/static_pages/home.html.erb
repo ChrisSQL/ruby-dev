@@ -1,13 +1,19 @@
 <% if logged_in? %>
+
     <div class="home-screen">
+
       <div class="row">
+        <section class="project_form">
         <aside class="col-md-12">
-          <section class="project_form">
+
             <%= render 'shared/project_form' %>
-          </section>
+
         </aside>
+        </section>
       </div>
+
     </div>
+
 <% else %>
 
 <% end %>

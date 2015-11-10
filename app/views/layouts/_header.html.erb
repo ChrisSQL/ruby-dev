@@ -1,42 +1,54 @@
 <script>
-    $(document).ready(function(){
-        $(".toggle-form").click(function(){
-            $(".project-form").slideToggle();
-        });
+  $(document).ready(function () {
+    $(".toggle-form").click(function () {
+      $(".project-form").slideToggle();
     });
+  });
 
-    $(document).ready(function(){
-      $(".toggle-timetable").click(function(){
-        $(".timetable-show").slideToggle();
-      });
+  $(document).ready(function () {
+    $(".toggle-timetable").click(function () {
+      $(".timetable-show").slideToggle();
     });
+  });
 
-    $(document).on("ready page:change", function() {
-        $('.tip').tooltip();
-    });
+  $(document).on("ready page:change", function () {
+    $('.tip').tooltip();
+  });
 
+</script>
 
+<script>
+  $(document).ready(function () {
+    var $answers = $('.answer');
+    $(".member").click(function () {
+      var $ans = $(this).next(".answer").stop(true).slideToggle(100);
+      $answers.not($ans).filter(':visible').stop(true).slideUp();
+    })
+  });
 </script>
 
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-           <%= link_to "college planner", root_path, id: "logo" , 'data-no-turbolink' => true %>
+    <%= link_to "college planner", root_path, id: "logo", 'data-no-turbolink' => true %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
 
         <% if logged_in? %>
 
             <% if current_page?(root_path) %>
-                <li><%= link_to image_tag("add.png"), "#", 'data-no-turbolink' => true, class: "toggle-form tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Add Project' %></li>
-                <li><%= link_to image_tag("timetable.png"), "#", 'data-no-turbolink' => true, class: "toggle-timetable tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'View Timetable' %></li>
+                <li><%= link_to image_tag("add.png"), "#", 'data-no-turbolink' => true, class: "toggle-form tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'Add Project' %></li>
+                <li><%= link_to image_tag("timetable.png"), "#", 'data-no-turbolink' => true, class: "toggle-timetable tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'View Timetable' %></li>
             <% else %>
-                <li><%= link_to image_tag("add.png"), root_path, 'data-no-turbolink' => true, class: "toggle-form tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Add Project' %></li>
-                <li><%= link_to image_tag("timetable.png"), root_path, 'data-no-turbolink' => true, class: "toggle-timetable tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'View Timetable' %></li>
-      <% end %>
+                <li><%= link_to image_tag("add.png"), root_path, 'data-no-turbolink' => true, class: "toggle-form tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'Add Project' %></li>
+                <li><%= link_to image_tag("timetable.png"), root_path, 'data-no-turbolink' => true, class: "toggle-timetable tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'View Timetable' %></li>
+            <% end %>
+            <!--<li><%= link_to image_tag("users.png"), root_path, 'data-no-turbolink' => true, class: "tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'Group Notes' %></li>-->
 
-            <!--<li><%= link_to image_tag("add.png"), "#", 'data-no-turbolink' => true, class: "toggle-form tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Add Project' %></li>-->
-            <% if current_user.admin? %><li><%= link_to image_tag("users.png"), users_path , class: "tip" ,'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Users'%></li><% end %>
-            <li><%= link_to image_tag("account.png"), current_user , 'data-no-turbolink' => true, class: "right-button-header tip" , 'data-toggle' => 'tooltip', 'data-placement' => 'bottom',  title: 'Account Details' %></li>
+            <!--<li><%= link_to image_tag("add.png"), "#", 'data-no-turbolink' => true, class: "toggle-form tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'Add Project' %></li>-->
+            <% if current_user.admin? %>
+                <li><%= link_to image_tag("users.png"), users_path, class: "tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'Users' %></li>
+            <% end %>
+            <li><%= link_to image_tag("account.png"), current_user, 'data-no-turbolink' => true, class: "right-button-header tip", 'data-toggle' => 'tooltip', 'data-placement' => 'bottom', title: 'Account Details' %></li>
         <% else %>
             <li><%= link_to image_tag("account.png"), login_path %></li>
         <% end %>
@@ -44,5 +56,9 @@
     </nav>
   </div>
 </header>
+
+
+
+
 
 

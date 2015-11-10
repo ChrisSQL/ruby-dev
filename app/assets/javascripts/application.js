@@ -18,4 +18,5 @@
 //= require tinymce-jquery
 
 //= require bootstrap-datepicker
+//= require gritter
 
