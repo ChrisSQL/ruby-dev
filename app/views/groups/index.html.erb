@@ -11,7 +11,7 @@
 <div class="home-screen">
   <div class="row">
     <div class="col-md-6">
-      <div class="text-center group-title">Group Notes for :class_name, :college_name</div>
+      <div class="text-center group-title">Group Notes  <%= @user.college_name %>  <%= @user.course_name %></div>
     </div>
     <div class="col-md-6">
       <button class="toggle-form-group btn btn-primary">New Group Note</button>
@@ -87,5 +87,7 @@
 
       </div>
   <% end %>
+
+  <%= will_paginate %>
 
 </div>

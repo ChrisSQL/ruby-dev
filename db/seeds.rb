@@ -6,28 +6,34 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(name:  "A User",
+User.create!(name: "Chris Maher",
              email: "a@a.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
              activated: true,
+             college_name: "Waterford IT",
+             course_name: "Software Systems Development",
              activated_at: Time.zone.now)
 
-10.times do |n|
+50.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@collegeplanner.ie"
   password = "password"
+  college_name = Faker::University.name
+  course_name = Faker::Lorem.sentence(1)
   User.create!(name:  name,
                email: email,
                password:              password,
                password_confirmation: password,
                activated: true,
+               college_name: college_name,
+               course_name: course_name,
                activated_at: Time.zone.now)
 end
 
 users = User.order(:created_at).take(6)
-10.times do
+25.times do
   content = Faker::Lorem.sentence(1)
   subject = Faker::Lorem.word
   type = Faker::Lorem.word
@@ -42,6 +48,18 @@ users = User.order(:created_at).take(6)
                                             project_details: details) }
 end
 
+users = User.order(:created_at).take(25)
+1.times do
+
+  author_email = Faker::Internet.email
+  note_subject = Faker::Lorem.word
+  note_details = Faker::Hacker.say_something_smart
+  users.each { |user| user.groups.create!(author_email: author_email,
+                                          note_subject: note_subject,
+                                          note_details: note_details) }
+end
+
+
 users = User.order(:created_at).take(6)
 1.times do
   name = Faker::Lorem.sentence(1)
@@ -49,4 +67,6 @@ users = User.order(:created_at).take(6)
   users.each { |user| user.timetables.create!(name: name,
                                             attachment: attachment) }
 end
+
+
 

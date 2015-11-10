@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :projects, dependent: :destroy
   has_many :timetables, dependent: :destroy
   has_many :groups
+  has_one :colleges, :class_name => "College", :foreign_key => "name"
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email

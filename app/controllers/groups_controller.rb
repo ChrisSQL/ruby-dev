@@ -4,8 +4,8 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
     @user = User.find(current_user)
+    @groups = @user.groups.paginate(page: params[:page]).reorder("created_at DESC")
     @group = Group.new
 
     respond_to do |format|

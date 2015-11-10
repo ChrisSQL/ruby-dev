@@ -1,12 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
+
   before_action :total_projects
   before_action :projects_today
+
   before_action :total_users
   before_action :users_today
+
   before_action :total_groups
   before_action :groups_today
+
+  before_action :users_weekly
+  before_action :users_yearly
 
   private
 
@@ -44,12 +50,12 @@ class ApplicationController < ActionController::Base
     @groups_today = Group.where(created_at: (Time.now - 24.hours)..Time.now).count
   end
 
-  def total_colleges
-    @total_users = User.all.size
+  def users_weekly
+    @users_weekly = User.where(created_at: (Time.now - 1.week)..Time.now).count
   end
 
-  def colleges_today
-    @users_today = User.where(created_at: (Time.now - 24.hours)..Time.now).count
+  def users_yearly
+    @users_yearly = User.where(created_at: (Time.now - 1.year)..Time.now).count
   end
 
 
