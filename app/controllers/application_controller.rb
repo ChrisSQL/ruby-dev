@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :projects_today
   before_action :total_users
   before_action :users_today
+  before_action :total_groups
+  before_action :groups_today
 
   private
 
@@ -31,6 +33,22 @@ class ApplicationController < ActionController::Base
   end
 
   def users_today
+    @users_today = User.where(created_at: (Time.now - 24.hours)..Time.now).count
+  end
+
+  def total_groups
+    @total_groups= Group.all.size
+  end
+
+  def groups_today
+    @groups_today = Group.where(created_at: (Time.now - 24.hours)..Time.now).count
+  end
+
+  def total_colleges
+    @total_users = User.all.size
+  end
+
+  def colleges_today
     @users_today = User.where(created_at: (Time.now - 24.hours)..Time.now).count
   end
 

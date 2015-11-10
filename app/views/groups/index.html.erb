@@ -1,12 +1,65 @@
+<script>
+  $(document).ready(function () {
+    $(".toggle-form-group").click(function () {
+      $(".group-form").slideToggle();
+    });
+  });
+</script>
+
 <p id="notice" xmlns="http://www.w3.org/1999/html"><%= notice %></p>
 
 <div class="home-screen">
-  <div class="text-center">Group Notes for :class_name, :college_name</div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="text-center group-title">Group Notes for :class_name, :college_name</div>
+    </div>
+    <div class="col-md-6">
+      <button class="toggle-form-group btn btn-primary">New Group Note</button>
+    </div>
+  </div>
+  <div class="group-form">
+
+    <%= bootstrap_form_for(@group) do |f| %>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="field">
+              <%= f.text_field :author_email, :value => @user.email, :readonly => true %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="field">
+              <%= f.text_field :note_subject %>
+            </div>
+          </div>
+
+
+          <div class="col-md-12">
+            <div class="field">
+              <%= f.text_area :note_details,  :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
+            </div>
+          </div>
+
+          <%= tinymce %>
+
+
+          <div class="col-lg-12">
+            <div class="actions">
+              <%= f.submit "Create Group Note", class: "btn btn-danger"%>
+            </div>
+          </div>
+        </div>
+
+    <% end %>
+
+  </div>
+
+
 </div>
 
 <div class="home-screen">
 
-  <% @groups.each do |group|%>
+  <% @groups.each do |group| %>
       <div class="row group">
         <div class="col-md-1">
 
@@ -20,7 +73,7 @@
 
         </div>
         <div class="col-lg-6">
-          <h1><%= link_to group.note_subject, group,class:  "group-subject" %></h1>
+          <h2><%= link_to group.note_subject, group, class: "group-subject", 'data-no-turbolink' => true %></h2>
         </div>
 
         <div class="col-lg-3">

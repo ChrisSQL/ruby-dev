@@ -17,22 +17,32 @@
 
         <div class="col-md-12">
           <div class="field">
-            <%= f.text_area :note_details,  :value => @group.note_details, :class => "tinymce", :rows => 20, :cols => 50, label: "Notes", :readonly => true %>
+            <%= f.text_area :note_details, :value => @group.note_details, :class => "tinymce", :rows => 20, :cols => 50, label: "Notes", :readonly => true %>
           </div>
         </div>
 
         <%= tinymce %>
 
+        <%= if @group.user == current_user
+
+            end %>
+
+
+
 
         <div class="col-lg-12">
           <div class="actions">
-            <%= button_to 'Update', edit_group_path(@group), class: "btn-sm btn-primary" %>
+            <% if current_user.id == @group.user.id %>
+                <%= button_to 'Update', edit_group_path(@group), class: "btn-sm btn-primary" %>
+            <% else %>
+                <%= button_to 'Cannot Update other users notes.', edit_group_path(@group), class: "btn-sm btn-primary", disable: true %>
+            <% end %>
           </div>
         </div>
         <!--<div class="col-lg-6">-->
-          <!--<div class="actions">-->
-            <!--<%= f.submit "Create Group Note", class: "btn-sm btn-danger"%>-->
-          <!--</div>-->
+        <!--<div class="actions">-->
+        <!--<%= f.submit "Create Group Note", class: "btn-sm btn-danger" %>-->
+        <!--</div>-->
         <!--</div>-->
       </div>
 

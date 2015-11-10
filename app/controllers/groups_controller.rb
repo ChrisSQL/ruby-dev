@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
     @user = User.find(current_user)
+    @group = Group.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,19 +34,30 @@ class GroupsController < ApplicationController
   def edit
   end
 
-  # POST /groups
-  # POST /groups.json
-  def create
-    @group = Group.new(group_params)
+  # # POST /groups
+  # # POST /groups.json
+  # def create
+  #   @user = User.find(current_user)
+  #   @group = Group.new(group_params)
+  #
+  #   respond_to do |format|
+  #     if @group.save
+  #       format.html { redirect_to @group, notice: 'Group was successfully created.' }
+  #       format.json { render json: @group, status: :created }
+  #     else
+  #       format.html { render action: 'new' }
+  #       format.json { render json: @group.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render json: @group, status: :created }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
+  def create
+    if current_user.groups.create(group_params)
+      flash[:success] = "Group Note created!"
+      redirect_to groups_path
+    else
+      flash[:success] = "Group Note not created!"
+      redirect_to groups_path
     end
   end
 
