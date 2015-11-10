@@ -6,7 +6,7 @@ default: &default
 development:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
+  reconnect: true
   database: collegeplanner
   pool: 5
   username: root

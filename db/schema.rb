@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110105729) do
+ActiveRecord::Schema.define(version: 20151110145534) do
 
   create_table "appusers", force: :cascade do |t|
     t.string   "provider",         limit: 255
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20151110105729) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "colleges", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "country",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "website",    limit: 255
   end
 
   create_table "groups", force: :cascade do |t|
@@ -116,11 +124,14 @@ ActiveRecord::Schema.define(version: 20151110105729) do
     t.string   "uid",                  limit: 255
     t.string   "oauth_token",          limit: 255
     t.datetime "oauth_expires_at"
+    t.integer  "college_id",           limit: 4
   end
 
+  add_index "users", ["college_id"], name: "index_users_on_college_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "groups", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "timetables", "users"
+  add_foreign_key "users", "colleges"
 end
