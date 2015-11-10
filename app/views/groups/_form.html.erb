@@ -1,0 +1,36 @@
+<div class="home-screen">
+
+<%= bootstrap_form_for(@group) do |f| %>
+
+      <div class="row">
+      <div class="col-lg-6">
+        <div class="field">
+          <%= f.text_field :author_email, :value => @user.email, :readonly => true %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="field">
+          <%= f.text_field :note_subject %>
+        </div>
+      </div>
+
+
+        <div class="col-md-12">
+          <div class="field">
+            <%= f.text_area :note_details,  :class => "tinymce", :rows => 20, :cols => 50, label: "Notes" %>
+          </div>
+        </div>
+
+        <%= tinymce %>
+
+
+      <div class="col-lg-12">
+        <div class="actions">
+          <%= f.submit "Create Group Note"%>
+        </div>
+      </div>
+      </div>
+
+<% end %>
+
+  </div>

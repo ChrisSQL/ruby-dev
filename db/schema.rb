@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103175345) do
+ActiveRecord::Schema.define(version: 20151110105729) do
 
   create_table "appusers", force: :cascade do |t|
     t.string   "provider",         limit: 255
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20151103175345) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "author_email", limit: 255
+    t.string   "note_subject", limit: 255
+    t.text     "note_details", limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "user_id",      limit: 4
+  end
+
+  add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", limit: 4,     null: false
@@ -109,6 +120,7 @@ ActiveRecord::Schema.define(version: 20151103175345) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "groups", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "timetables", "users"
 end

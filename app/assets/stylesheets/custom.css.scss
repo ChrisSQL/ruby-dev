@@ -72,11 +72,12 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  line-height: 1.7em;
 
 }
 
 #logo:hover {
-  color: #fff;
+  //color: #fff;
   text-decoration: none;
 }
 
@@ -579,5 +580,101 @@ span.picture {
 
   margin: 10px;
   height: 100%;
+
+}
+
+.group{
+
+  margin: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  height: 100px;
+
+}
+
+/* posts */
+
+.group {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+    height: 110px;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .btn-sm{
+    margin-top: 5px;
+    padding: 2px;
+
+  }
+  .subject {
+    display: block;
+    margin-left: 10px;
+    img {
+      display: block;
+      padding: 5px 0;
+      margin: 0px auto;
+    }
+    font-size: x-large;
+    font-weight: bold;
+
+  }
+  .title {
+    display: block;
+    margin-left: 10px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+    font-size: large;
+    margin-top: 10px;
+
+  }
+  .timestamp {
+    color: #000000;
+    display: block;
+    text-align: center;
+    font-size: x-large;
+    //height: 100px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+
+
+  }
+  .sub-text{
+
+    display: block;
+    text-align: center;
+
+  }
+  .posted-by{
+
+    margin: 10px;
+    display: block;
+    text-align: center;
+
+  }
+
+  .group-subject{
+
+    margin: 10px;
+    display: block;
+    text-align: center;
+
+  }
+
+  a{
+
+    color: #000000;
+
+  }
 
 }
