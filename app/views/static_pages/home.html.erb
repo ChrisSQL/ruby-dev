@@ -5,9 +5,7 @@
       <div class="row">
         <section class="project_form">
         <aside class="col-md-12">
-
             <%= render 'shared/project_form' %>
-
         </aside>
         </section>
       </div>
@@ -19,6 +17,7 @@
 <% end %>
 
 <% if logged_in? %>
+
     <div class="home-screen">
       <div class="row">
         <div class="col-md-12 timetable-show">
@@ -26,6 +25,7 @@
         </div>
       </div>
     </div>
+
     <div class="home-screen">
       <div class="row">
         <div class="col-md-12">
@@ -33,6 +33,7 @@
         </div>
       </div>
     </div>
+
 <% else %>
 
     <div class="home-screen-loggedout">
