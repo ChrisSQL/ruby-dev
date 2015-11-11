@@ -5,7 +5,7 @@
       <driver-ref>3b2b7722-d7cd-4465-a258-e7d677e86f4a</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/collegeplanner</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/collegeplanner</jdbc-url>
       <explain-plan-config>
         <provider>com.intellij.database.plan.mysql.MysqlExplainPlanProvider</provider>
       </explain-plan-config>
