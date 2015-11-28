@@ -12,6 +12,8 @@ gem 'bootstrap-sass', '3.2.0.0'
 gem 'bcrypt', '3.1.7'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+
+
 gem 'faker'
 gem 'tinymce-rails'
 gem 'bootstrap_form'
@@ -26,17 +28,12 @@ gem 'doorkeeper'
 gem "administrate"
 gem "gritter", "1.2.0"
 gem "recaptcha", :require => "recaptcha/rails"
-
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_hash_relation'
 
-#api related
+#api related gems
 gem 'pundit', '~> 0.3.0'
-#gem 'active_model_serializers',
-#  git: 'git@github.com:rails-api/active_model_serializers.git',
-#  branch: '0-9-stable'
-
 gem 'active_model_serializers', '0.9.2'
 gem 'kaminari', '~> 0.16.1'
 
