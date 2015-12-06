@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(name: "Chris Maher",
-             email: "a@a.com",
+             email: "chris@wit.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
@@ -16,12 +16,12 @@ User.create!(name: "Chris Maher",
              course_name: "Software Systems Development",
              activated_at: Time.zone.now)
 
-50.times do |n|
+5.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@collegeplanner.ie"
-  password = "password"
-  college_name = Faker::University.name
-  course_name = Faker::Lorem.sentence(1)
+  email = "example-#{n+1}@wit.ie"
+  password = "foobar"
+  college_name = "Waterford IT"
+  course_name = "Software Systems Development"
   User.create!(name:  name,
                email: email,
                password:              password,
@@ -32,15 +32,15 @@ User.create!(name: "Chris Maher",
                activated_at: Time.zone.now)
 end
 
-users = User.order(:created_at).take(6)
-25.times do
-  content = Faker::Lorem.sentence(1)
-  subject = Faker::Lorem.word
-  type = Faker::Lorem.word
-  worth = Faker::Number.between(1,100)
+users = User.order(:created_at).take(5)
+1.times do
+  title = "Android Project"
+  subject = "Android"
+  type = "Project"
+  worth = Faker::Number.between(20,100)
   duedate = Faker::Date.forward(60)
-  details = Faker::Lorem.sentence(20)
-  users.each { |user| user.projects.create!(project_title: content,
+  details = Faker::Hacker.say_something_smart
+  users.each { |user| user.projects.create!(project_title: title,
                                             project_subject: subject,
                                             project_type: type,
                                             project_worth: worth,
@@ -48,11 +48,59 @@ users = User.order(:created_at).take(6)
                                             project_details: details) }
 end
 
-users = User.order(:created_at).take(25)
+users = User.order(:created_at).take(5)
+1.times do
+  title = "Rails Project"
+  subject = "Rails"
+  type = "Project"
+  worth = Faker::Number.between(20,100)
+  duedate = Faker::Date.forward(60)
+  details = Faker::Hacker.say_something_smart
+  users.each { |user| user.projects.create!(project_title: title,
+                                            project_subject: subject,
+                                            project_type: type,
+                                            project_worth: worth,
+                                            project_due_date: duedate,
+                                            project_details: details) }
+end
+
+users = User.order(:created_at).take(5)
+1.times do
+  title = "Ruby Project"
+  subject = "Ruby"
+  type = "Project"
+  worth = Faker::Number.between(20,100)
+  duedate = Faker::Date.forward(60)
+  details = Faker::Hacker.say_something_smart
+  users.each { |user| user.projects.create!(project_title: title,
+                                            project_subject: subject,
+                                            project_type: type,
+                                            project_worth: worth,
+                                            project_due_date: duedate,
+                                            project_details: details) }
+end
+
+users = User.order(:created_at).take(5)
+1.times do
+  title = "Databases Project"
+  subject = "Databases"
+  type = "Project"
+  worth = Faker::Number.between(20,100)
+  duedate = Faker::Date.forward(60)
+  details = Faker::Hacker.say_something_smart
+  users.each { |user| user.projects.create!(project_title: title,
+                                            project_subject: subject,
+                                            project_type: type,
+                                            project_worth: worth,
+                                            project_due_date: duedate,
+                                            project_details: details) }
+end
+
+users = User.order(:created_at).take(10)
 1.times do
 
   author_email = Faker::Internet.email
-  note_subject = Faker::Lorem.word
+  note_subject = "Attention Classmates"
   note_details = Faker::Hacker.say_something_smart
   users.each { |user| user.groups.create!(author_email: author_email,
                                           note_subject: note_subject,
@@ -60,13 +108,13 @@ users = User.order(:created_at).take(25)
 end
 
 
-users = User.order(:created_at).take(6)
-1.times do
-  name = Faker::Lorem.sentence(1)
-  attachment = Faker::Lorem.word
-  users.each { |user| user.timetables.create!(name: name,
-                                            attachment: attachment) }
-end
+# users = User.order(:created_at).take(5)
+# 1.times do
+#   name = "Timetable"
+#   attachment = "http://localhost:3000/uploads/timetable/attachment/6/Screenshot_from_2015-11-11_00_10_16.png"
+#   users.each { |user| user.timetables.create!(name: name,
+#                                             attachment: attachment) }
+# end
 
 
 

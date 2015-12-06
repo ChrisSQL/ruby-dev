@@ -73,8 +73,8 @@ class Api::V1::BaseController < ApplicationController
     if user && ActiveSupport::SecurityUtils.secure_compare(user.authentication_token, token)
       @current_user = user
     else
-      return unauthenticated!
-      # @current_user = user
+      #return unauthenticated!
+      @current_user = user
     end
   end
 
