@@ -31,6 +31,12 @@ gem "recaptcha", :require => "recaptcha/rails"
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_hash_relation'
+gem "unicorn"
+gem "thin"
+gem "puma"
+gem "passenger"
+gem 'sqlite3', '1.3.9'
+
 
 #api related gems
 gem 'pundit', '~> 0.3.0'
@@ -38,7 +44,7 @@ gem 'active_model_serializers', '0.9.2'
 gem 'kaminari', '~> 0.16.1'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.9'
+
   gem 'byebug', '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring', '1.1.3'
