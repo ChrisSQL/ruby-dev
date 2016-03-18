@@ -27,6 +27,7 @@ gem 'sidekiq'
 gem 'doorkeeper'
 gem "administrate"
 gem "gritter", "1.2.0"
+gem "recaptcha", :require => "recaptcha/rails"
 gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_hash_relation'
