@@ -35,7 +35,6 @@ gem "unicorn"
 gem "thin"
 gem "puma"
 gem "passenger"
-gem 'sqlite3', '1.3.9'
 
 
 #api related gems
